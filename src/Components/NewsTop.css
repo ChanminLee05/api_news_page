@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Protest+Strike&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Playfair+Display:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Permanent+Marker&display=swap');
 
 .top-section {
     margin: 10vw;
@@ -38,11 +39,44 @@
     height: 100%;
     object-fit: cover;
     object-position: center 65%;
+    z-index: 0;
 }
+
+.center-text {
+    bottom: 1.6vw;
+    left: 5vw;
+    z-index: 1;
+}
+
+.traveltxt {
+    position: relative;
+    left: 8vw;
+    top: 2vw;
+    font-size: 2vw;
+    font-family: "Permanent Marker", cursive;
+    color: #1e65e5;
+}
+
+.flighttxt1 {
+    position: relative;
+    top: 1vw;
+    left: 2vw;
+    font-size: 3vw;
+    font-weight: bold;
+    color: white;
+}
+
+.flighttxt2 {
+    font-size: 1.7vw;
+    color: #345696;
+}
+
+
 
 .adbtn {
     right: 5vw;
     top: 3vw;
+    font-size: 1.3vw;
     padding: 5px 3vw 5px 3vw;
     font-family: "Lora", serif;
 }

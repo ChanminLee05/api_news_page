@@ -136,6 +136,9 @@ export default function NewsList() {
             </div>
             <div className="line-break"></div>
             <div className="bottomNews">
+                <div className="feat-container">
+                    <h2 className="fw-bold">Most Read</h2>
+                </div>
                 <div className="gridNews container">
                     <div className="rowArt row">
                         {articles.slice(2, articlesToShow).map((article, index) => (
