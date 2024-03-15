@@ -1,16 +1,20 @@
 .news-item {
-    width: 290px;
+    width: 15vw;
 }
 
 .news-img {
-    width: 290px;
+    width: 15vw;
 }
 
-a {
+.news-title {
+    font-size: 1.2vw;
+}
+
+.news-link {
     text-decoration: none;
     color: black;
 }
 
-a:hover {
+.news-link:hover {
     color: #3d3d3d;
 }
