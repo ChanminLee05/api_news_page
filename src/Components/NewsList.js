@@ -8,12 +8,12 @@ export default function NewsList() {
     const [articlesToShow, setArticlesToShow] = useState(7);
 
     useEffect(() => {
-        const teslaUrl = 'https://newsapi.org/v2/everything?q=apple&from=2024-02-01&to=2024-02-01&sortBy=popularity&apiKey='
+        const teslaUrl = 'https://newsapi.org/v2/everything?q=tesla&from=2024-02-15&sortBy=publishedAt&apiKey='
         const getArticles = async (url) => {
             try {
                 const response = await fetch(url + API_KEY);
                 const data = await response.json();
-                setArticles(data.articles);
+                setArticles(data.articles || []);
             } catch (error) {
                 console.error("Error fetching data:", error);
             }
@@ -22,7 +22,7 @@ export default function NewsList() {
     }, []);
 
     const handleAppleClick = async () => {
-        const appleUrl = 'https://newsapi.org/v2/everything?q=apple&from=2024-02-21&to=2024-02-21&sortBy=popularity&apiKey=';
+        const appleUrl = 'https://newsapi.org/v2/everything?q=apple&from=2024-03-14&to=2024-03-14&sortBy=popularity&apiKey=';
         try {
             const response = await fetch(appleUrl + API_KEY);
             const data = await response.json();
@@ -34,7 +34,7 @@ export default function NewsList() {
     };
 
     const handleTeslaClick = async () => {
-        const teslaUrl = 'https://newsapi.org/v2/everything?q=apple&from=2024-02-01&to=2024-02-01&sortBy=popularity&apiKey='
+        const teslaUrl = 'https://newsapi.org/v2/everything?q=tesla&from=2024-02-15&sortBy=publishedAt&apiKey='
         try {
             const response = await fetch(teslaUrl + API_KEY);
             const data = await response.json();
@@ -109,24 +109,24 @@ export default function NewsList() {
                 <div className="latest">
                     <h2 className="fw-bold">Latest News</h2>
                 </div>
-                <div className="recentNews">
-                    {articles.length > 0 && (
-                        <div className="firstNews">
-                            <a href={articles[0].url} target="_blank" rel="noreferrer">
+                <div className="recentNews row">
+                    {articles && articles.length > 0 && (
+                        <div className="firstNews col-8">
+                            <a className="news-link" href={articles[0].url} target="_blank" rel="noreferrer">
                                 <img className="firstNewsImg" src={articles[0].urlToImage} alt={articles[0].title}/>
                             </a>
-                            <a href={articles[0].url} target="_blank" rel="noreferrer">
+                            <a className="news-link" href={articles[0].url} target="_blank" rel="noreferrer">
                                 <h2 className="firstNewsTitle">{articles[0].title}</h2>
                             </a>
                             <p className="firstNewsDesc">{articles[0].description}</p>
                         </div>
                     )}
-                    {articles.length > 1 && (
-                        <div className="secondNews">
-                            <a href={articles[1].url} target="_blank" rel="noreferrer">
+                    {articles && articles.length > 1 && (
+                        <div className="secondNews col-4">
+                            <a className="news-link" href={articles[1].url} target="_blank" rel="noreferrer">
                                 <img className="secondNewsImg" src={articles[1].urlToImage} alt={articles[1].title}/>
                             </a>
-                            <a href={articles[1].url} target="_blank" rel="noreferrer">
+                            <a className="news-link" href={articles[1].url} target="_blank" rel="noreferrer">
                                 <h2 className="secondNewsTitle">{articles[1].title}</h2>
                             </a>
                             <p className="secondNewsDesc">{articles[1].description}</p>
@@ -139,10 +139,10 @@ export default function NewsList() {
                 <div className="feat-container">
                     <h2 className="fw-bold">Most Read</h2>
                 </div>
-                <div className="gridNews container">
+                <div className="gridNews">
                     <div className="rowArt row">
                         {articles.slice(2, articlesToShow).map((article, index) => (
-                            <div key={article.url} className="colArt col">
+                            <div key={article.url} className="colArt col-4">
                                 <NewsItem
                                     title={article.title}
                                     description={article.description}

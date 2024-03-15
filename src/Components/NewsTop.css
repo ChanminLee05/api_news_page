@@ -15,14 +15,14 @@
 
 .sub-title {
     color: grey;
-    font-size: 1.4rem;
-    left: 1.9vw;
-    bottom: -1vw;
+    font-size: 1.5vw;
+    left: 2.6vw;
+    bottom: -1.2vw;
     cursor: default;
 }
 
 .main-title {
-    font-size: 3.5rem;
+    font-size: 3.8vw;
     font-family: 'Protest Strike', sans-serif;
     cursor: default;
 }
@@ -51,7 +51,7 @@
 .traveltxt {
     position: relative;
     left: 8vw;
-    top: 2vw;
+    top: 3vw;
     font-size: 2vw;
     font-family: "Permanent Marker", cursive;
     color: #1e65e5;
@@ -59,7 +59,7 @@
 
 .flighttxt1 {
     position: relative;
-    top: 1vw;
+    top: 1.5vw;
     left: 2vw;
     font-size: 3vw;
     font-weight: bold;
@@ -70,8 +70,6 @@
     font-size: 1.7vw;
     color: #345696;
 }
-
-
 
 .adbtn {
     right: 5vw;
